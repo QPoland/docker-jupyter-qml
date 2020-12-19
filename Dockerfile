@@ -4,10 +4,11 @@ FROM python:3.8-slim
 RUN apt-get update && yes | apt-get upgrade
 
 # Adding gcc
-RUN apt-get install -y git  gcc
+RUN apt-get install -y git gcc
 
+COPY Test.ipynb /notebooks/Test.ipynb
 
-RUN pip3 install qiskit jupyter matplotlib
+RUN pip3 install qiskit jupyter matplotlib pylatexenc
 
 
 # Configuring access to Jupyter
@@ -25,4 +26,4 @@ EXPOSE 8888
 #CMD ["jupyter", "notebook", "--allow-root", "--notebook-dir=/notebooks", "--ip='*'", "--port=8888", "--no-browser"]
 
 # Run Jupyter notebook  without password - not recomended !!!
-#CMD ["jupyter", "notebook", "--allow-root", "--notebook-dir=/notebooks", "--ip='*'", "--port=8888", "--no-browser", "--NotebookApp.token=''"]
+CMD ["jupyter", "notebook", "--allow-root", "--notebook-dir=/notebooks", "--ip='*'", "--port=8888", "--no-browser", "--NotebookApp.token=''"]
