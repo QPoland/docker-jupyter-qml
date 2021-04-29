@@ -12,7 +12,7 @@ docker build -t quantum .
 ## run 
 
 ```{bash}
-docker run -d -p 8888:8888 -v <full_path_to_your_folder>:/notebooks quantum
+docker run -d -p 8888:8888 -v "full_path_to_your_folder:/notebooks" quantum
 ```
 Go to Web browser 
 
