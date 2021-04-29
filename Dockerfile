@@ -6,10 +6,8 @@ RUN apt-get update && yes | apt-get upgrade
 # Adding gcc
 RUN apt-get install -y git gcc
 
-COPY Test.ipynb /notebooks/Test.ipynb
 
-RUN pip3 install qiskit jupyter matplotlib pylatexenc
-
+RUN pip3 install jupyter qiskit numpy pandas matplotlib pylatexenc
 
 # Configuring access to Jupyter
 WORKDIR /notebooks/
