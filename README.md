@@ -1,4 +1,6 @@
-# docker-jupyter-qiskit
+# docker-jupyter-qml
+
+Docker image with qiskit and pennylane libraries and with jupyter notebook env
 
 ## setup 
 
@@ -30,4 +32,3 @@ docker stop id
 # remove
 docker -rm -f quantum
 ```
-
