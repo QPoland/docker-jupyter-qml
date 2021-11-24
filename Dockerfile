@@ -7,7 +7,10 @@ RUN apt-get update && yes | apt-get upgrade
 RUN apt-get install -y git gcc
 
 
-RUN pip3 install jupyter qiskit numpy pandas matplotlib pylatexenc
+RUN pip install ipython jupyter
+RUN pip install scipy numpy pandas matplotlib pylatexenc sklearn
+RUN pip install qiskit qiskit[finance] qiskit[machine-learning]
+RUN pip install pennylane
 
 # Configuring access to Jupyter
 WORKDIR /notebooks/
