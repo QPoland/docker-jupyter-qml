@@ -17,6 +17,8 @@ COPY Test.ipynb /notebooks/
 # Configuring access to Jupyter
 WORKDIR /notebooks/
 
+RUN git clone https://gitlab.com/qworld/bronze-qiskit.git
+
 # RUN git clone .... 
 
 RUN jupyter notebook --generate-config --allow-root
