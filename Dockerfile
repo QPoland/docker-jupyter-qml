@@ -12,6 +12,8 @@ RUN pip install scipy numpy pandas matplotlib pylatexenc sklearn
 RUN pip install qiskit qiskit[finance] qiskit[machine-learning]
 RUN pip install pennylane
 
+COPY Test.ipynb /notebooks/
+
 # Configuring access to Jupyter
 WORKDIR /notebooks/
 
